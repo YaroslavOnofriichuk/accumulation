@@ -1,0 +1,26 @@
+.header {
+    height: 60px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #5423e7;
+}
+
+.navigation ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navigation li {
+    list-style: none;
+}
+
+.navigation li:not(:last-child) {
+    margin-right: 10px;
+}
+
+.navigation a[aria-current=page]{
+    color: #FFFFFF;
+}
