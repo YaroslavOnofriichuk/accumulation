@@ -6,8 +6,6 @@ import { createContext, useContext } from "react";
 
 type BallanceType = SnapshotIn<typeof Ballance>;
 
-type CategoryType = SnapshotIn<typeof Category>;
-
 const RootStore = types
     .model({
         ballances: types.array(Ballance),
