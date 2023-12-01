@@ -1,5 +1,5 @@
 export default async function getCurrencyRate() {
-    return fetch("https://bank.gov.ua/ua/open-data/api-dev")
+    return fetch("https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json")
         .then((response) => {
             if (!response.ok) {
                 throw new Error();

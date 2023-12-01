@@ -7,10 +7,11 @@
     }
 }
 
-.input {
+.select {
+    cursor: pointer;
     position: relative;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 100%;
     max-width: 400px;
     margin: 0 auto;
@@ -19,7 +20,7 @@
     background: rgba(57, 63, 84, 0.8);
 }
 
-.input:after {
+.select:after {
     content: "";
     position: absolute;
     left: 0px;
@@ -43,7 +44,9 @@
     animation: gradient 3s linear infinite;
 }
 
-.input input {
+.select input {
+    cursor: pointer;
+    pointer-events: none;
     border-style: none; 
     background: transparent; 
     outline: none;
@@ -52,21 +55,41 @@
     font-size: 1rem;
     line-height: 1.4rem;
     vertical-align: middle;
-    &::-webkit-input-placeholder {
+    &::-webkit-select-placeholder {
         color: #7881a1;
     }
 }
 
-.input input::-webkit-input-placeholder {
+.select input::-webkit-input-placeholder {
     color: #7881a1;
 }
 
-.input input::-webkit-outer-spin-button,
-.input input::-webkit-inner-spin-button {
+.select input::-webkit-outer-spin-button,
+.select seinputlect::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.input input[type=number] {
+.select input[type=number] {
   -moz-appearance: textfield;
+}
+
+.options {
+    margin: 0;
+    padding: 0;
+}
+
+.options li {
+    list-style: none;
+    padding: 5px;
+}
+
+.options li:hover {
+    color: #7881a1;
+    background-color: #5423e7;
+}
+
+.active {
+    color: #7881a1;
+    background-color: #5423e7;
 }

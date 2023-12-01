@@ -5,7 +5,7 @@ interface Props {
     type?: string;
     name: string;
     label: string;
-    value: string;
+    value: string | number;
     autoComplete?: boolean;
     onChange: (e: FormEvent<HTMLInputElement>) => void;
 }
