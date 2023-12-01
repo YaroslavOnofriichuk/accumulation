@@ -4,7 +4,8 @@
     border: none;
     outline: none;
     background: transparent;
-    color: #FFFFFF;
+    color: #ffffff;
+    border-bottom: 1px solid #ffffff;
 }
 
 .input::-webkit-input-placeholder {
@@ -13,10 +14,14 @@
 
 .input::-webkit-outer-spin-button,
 .input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
 
-.input[type=number] {
-  -moz-appearance: textfield;
+.input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.input:disabled {
+    border-color: transparent;
 }

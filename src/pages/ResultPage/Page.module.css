@@ -12,3 +12,32 @@
     font-weight: 400;
     line-height: 1.14;
 }
+
+.table {
+    border-collapse: collapse;
+    overflow-x: auto;
+}
+
+.table thead > tr:last-child > th {
+    border-bottom: 1px solid #FFFFFF;
+    padding: 5px;
+}
+
+.table td {
+    padding: 5px;
+}
+
+.table tfoot td {
+    border-top: 1px solid #FFFFFF;
+}
+
+.info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info li {
+    list-style: none;
+    margin: 0 10px;
+}

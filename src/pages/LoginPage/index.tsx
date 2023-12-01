@@ -4,13 +4,14 @@ import Input from "../../components/Input";
 import Button from "../../components/Button";
 import { useNavigate } from "react-router";
 import { useMst } from "../../store/Root";
+import useToast from "../../hooks/useToast";
 
 export default function LoginPage() {
     const [login, setLogin] = useState("");
     const [password, setPassword] = useState("");
-    const [error, setError] = useState<string | null>(null);
     const navigate = useNavigate();
     const store = useMst();
+    const { addToast } = useToast();
 
     const handleSubmit = (event: SyntheticEvent): void => {
         event.preventDefault();
@@ -18,13 +19,12 @@ export default function LoginPage() {
             store.signIn();
             navigate("/add-data");
         } else {
-            setError("Login or password is incorrenct");
+            addToast({ status: "error", text: "Login or password is incorrenct" });
         }
     };
 
     const handleChange = (event: FormEvent<HTMLInputElement>): void => {
         const { name, value } = event.currentTarget;
-        setError(null);
         name === "login" ? setLogin(value) : setPassword(value);
     };
 
@@ -32,7 +32,6 @@ export default function LoginPage() {
         <section>
             <h2 className={styles.title}>Log in</h2>
             <form className={styles.form} onSubmit={handleSubmit}>
-                {error && <p className={styles.error}>{error}</p>}
                 <Input
                     name="login"
                     label="Login"
@@ -47,7 +46,7 @@ export default function LoginPage() {
                     onChange={handleChange}
                 />
 
-                <Button type="submit" text="Sign in" disabled={Boolean(error)}/>
+                <Button type="submit" text="Sign in"/>
             </form>
         </section>
     );

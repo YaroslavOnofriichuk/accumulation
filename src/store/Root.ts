@@ -50,10 +50,8 @@ const RootStore = types
             const bal = self.ballances.find(b => b.month === ballance.month)
             if (bal) {
                 self.ballances.remove(bal)
-                self.ballances.push(Ballance.create(ballance))
-            } else {
-                self.ballances.push(Ballance.create(ballance))
             }
+            self.ballances.push(Ballance.create(ballance))
         },
         removeBallance(ballance: BallanceType) {
             const bal = self.ballances.find(b => b.month === ballance.month)
